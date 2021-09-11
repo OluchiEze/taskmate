@@ -1,3 +1,4 @@
+import django_heroku
 from pathlib import Path
 import environ
 
@@ -123,3 +124,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = "todolist"
+
+django_heroku.settings(locals())
