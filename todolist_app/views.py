@@ -4,6 +4,7 @@ from todolist_app.models import TaskList
 from todolist_app.form import TaskForm
 from django.contrib import messages
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -21,7 +22,8 @@ def todolist(request):
         all_tasks = paginator.get_page(page)
 
         return render(request, 'todolist.html', {'all_tasks': all_tasks})
-
+        
+@login_required
 def delete_task(request, task_id):
     task = TaskList.objects.get(pk=task_id)
     task.delete()
