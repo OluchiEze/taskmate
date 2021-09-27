@@ -22,7 +22,7 @@
             {% endfor%}
         {% endif %}
 
-        <form method=="POST" class="mt-5 col-6" >
+        <form method="POST" class="mt-5 col-6" >
             {% csrf_token %}
             {{ register_form|crispy }}
         <button class="btn btn-primary mb-5j" type="submit">Register</button>
